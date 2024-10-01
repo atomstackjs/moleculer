@@ -1,8 +1,8 @@
-const deprecateList: string[] = [];
+const deprecateList: Set<string> = new Set();
 
-function deprecate(prop: string, msg: string): void {
-	if (!deprecateList.includes(prop)) {
+export function deprecate(prop: string, msg: string): void {
+	if (!deprecateList.has(prop)) {
 		console.warn(`Deprecation warning: ${msg}`);
-		deprecateList.push(prop);
+		deprecateList.add(prop);
 	}
 }
