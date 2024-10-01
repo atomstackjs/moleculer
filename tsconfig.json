@@ -1,19 +1,31 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"lib": ["ES2023"],
-		"moduleResolution": "node",
-		"target": "ES2022",
-
-		"allowJs": true,
-		"strict": false,
-		"checkJs": true,
+		"outDir": "dist/",
+		"composite": false,
 		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"inlineSources": false,
+		"isolatedModules": true,
+		"moduleResolution": "Node",
+		"preserveWatchOutput": true,
 		"skipLibCheck": true,
-		"declarationDir": "generated-types",
-		"outDir": "dist",
-		"noEmit": true,
-		"resolveJsonModule": true
+		"strict": true,
+		"target": "ESNext",
+		"module": "CommonJS",
+		"sourceMap": true,
+		"rootDir": "./typescript",
 	},
-	"include": ["types/extends.d.ts", "src/**/*.js", "src/**/*.d.ts"],
-	"exclude": ["node_modules", ".eslintrc.js", "prettier.config.js"]
+	"include": [
+		"**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"src",
+		"test",
+		"*.spec.ts"
+	],
 }
