@@ -1,4 +1,4 @@
-import { NetworkInterfaceInfo } from "os";
+import { NetworkInterfaceInfo, networkInterfaces } from "os";
 
 /**
 * @returns a list of IP addresses for the current node
@@ -6,7 +6,7 @@ import { NetworkInterfaceInfo } from "os";
 export function getIpList(): string[] {
 	const list: string[] = [];
 	const ilist: string[] = [];
-	const interfaces = os.networkInterfaces() as { [key: string]: NetworkInterfaceInfo[] };
+	const interfaces = networkInterfaces() as { [key: string]: NetworkInterfaceInfo[] };
 	for (const iface in interfaces) {
 		for (const i in interfaces[iface]) {
 			const f = interfaces[iface]?.[i];
