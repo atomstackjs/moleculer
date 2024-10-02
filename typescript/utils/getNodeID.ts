@@ -1,7 +1,9 @@
+import { hostname } from "os";
+
 /**
 * @returns a unique identifier for the current node
 */
 export function getNodeID(): string {
-	return os.hostname().toLowerCase() + "-" + process.pid;
+	return hostname().toLowerCase() + "-" + process.pid;
 }
 
