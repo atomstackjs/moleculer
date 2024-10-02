@@ -8,6 +8,8 @@ import { getConstructorName } from './getConstructorName';
  * @returns {boolean}
  */
 export function isInheritedClass(instance: object, baseClass: object): boolean {
+	if (instance == null) return false;
+
 	const baseClassName = getConstructorName(baseClass);
 	let proto = instance;
 	while ((proto = Object.getPrototypeOf(proto))) {
