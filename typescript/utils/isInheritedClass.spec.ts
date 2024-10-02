@@ -1,5 +1,4 @@
 import { isInheritedClass } from './isInheritedClass';
-import { getConstructorName } from './getConstructorName';
 
 describe('isInheritedClass', () => {
 	class BaseClass { }
